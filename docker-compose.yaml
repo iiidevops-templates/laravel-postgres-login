@@ -14,7 +14,7 @@ services:
       db_password: IIIdevops123!
       db_host: db
     ports:
-      - 8080
+      - 3000
   db:
     image: bitnami/postgresql:13
     restart: always
