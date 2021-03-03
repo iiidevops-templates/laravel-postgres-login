@@ -1,6 +1,8 @@
 FROM dockerhub/bitnami/laravel:7-debian-10
 USER root
-RUN apt-get update && apt-get install -y nano git
+RUN apt-get update && apt-get install -y nano git unzip
+# https://docs.bitnami.com/bch/infrastructure/lapp/get-started/use-laravel/
+RUN sed -i '/;extension=pdo_pgsql/ c extension=pdo_pgsql' /opt/bitnami/php/etc/php.ini
 USER bitnami
 COPY --chown=bitnami:bitnami app /app
 RUN mv .env.example .env && \
