@@ -1,18 +1,5 @@
 -- Adminer 4.8.0 PostgreSQL 13.2 dump
 
-<br />
-<b>Warning</b>:  PDO::query(): SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near &quot;STATUS&quot;
-LINE 1: SHOW FUNCTION STATUS WHERE Db = 'login'
-                      ^ in <b>/var/www/html/adminer.php</b> on line <b>185</b><br />
-<br />
-<b>Warning</b>:  PDO::query(): SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near &quot;STATUS&quot;
-LINE 1: SHOW PROCEDURE STATUS WHERE Db = 'login'
-                       ^ in <b>/var/www/html/adminer.php</b> on line <b>185</b><br />
-<br />
-<b>Warning</b>:  PDO::query(): SQLSTATE[42703]: Undefined column: 7 ERROR:  column &quot;consrc&quot; does not exist
-LINE 1: SELECT conname, consrc
-                        ^
-HINT:  Perhaps you meant to reference the column &quot;pg_constraint.conkey&quot; or the column &quot;pg_constraint.conbin&quot;. in <b>/var/www/html/adminer.php</b> on line <b>185</b><br />
 DROP TABLE IF EXISTS "failed_jobs";
 DROP SEQUENCE IF EXISTS failed_jobs_id_seq;
 CREATE SEQUENCE failed_jobs_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1;
