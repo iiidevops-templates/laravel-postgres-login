@@ -1,15 +1,5 @@
 # Laravel7-登入系統範例
 
-## (local)本地環境隔離快速專案部屬(隨機PORT)
-需安裝Docker(Windows、Mac、Linux上均可安裝), 若在Linux環境需額外手動安裝docker-compose, 部屬結果與UI相同
-``` 
-docker-compose up -d --build 
-```
-部屬包含laravel網頁+postgres, 驗證後即可上傳程式碼
-
-## 程式碼參考教學來源
-[Laravel Login Registration Tutorial](https://www.soengsouy.com/2020/04/laravel-7-register-and-login-account.html?m=1)
-
 ## 開發者注意事項
 :warning: 若專案建立後程式碼Pull到local端下來無法執行, 此狀況為正常現象
 * 要在local端測試部屬提供兩種方式，透過安裝docker來進行專案快速專案部屬或直接修改我您作業系統的環境變數(或是採用.env)
@@ -56,6 +46,9 @@ ENV 環境變數名稱1 值1
 ENV 環境變數名稱2 值2
 ENV 環境變數名稱3 值3
 ```
+
+## 程式碼參考教學來源
+[Laravel Login Registration Tutorial](https://www.soengsouy.com/2020/04/laravel-7-register-and-login-account.html?m=1)
 
 ## reference
 [Laravel Login Registration Tutorial](https://www.soengsouy.com/2020/04/laravel-7-register-and-login-account.html?m=1)
