@@ -1,0 +1,30 @@
+# if dont want to mess with your os env
+version: '3.1'
+services:
+  login:
+    build:
+      context: ./
+      dockerfile: Dockerfile.local
+    restart: always
+    depends_on:
+      - db
+    environment:
+      db_name: login
+      db_username: postgres
+      db_password: IIIdevops123!
+      db_host: db
+    ports:
+      - 3000
+  db:
+    image: bitnami/postgresql:13
+    restart: always
+    environment:
+      POSTGRESQL_DATABASE: login
+      POSTGRESQL_PASSWORD: IIIdevops123!
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d:rw
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080

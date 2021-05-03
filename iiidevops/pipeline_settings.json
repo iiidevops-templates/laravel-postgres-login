@@ -1,0 +1,24 @@
+{
+  "name": "Laravel Postgres13 - login",
+  "description": "Laravel 7 / Postgres: 13 / <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/laravel-postgres-login/blob/master/README.md' target='_blank'>登入(login)範本說明</a>",
+  "arguments": [
+    {
+      "key": "db.username",
+      "display": "DB Username",
+      "default_value": "iiidevops",
+      "input_type": "text"
+    },
+    {
+      "key": "db.password",
+      "display": "DB Password",
+      "default_value": "templatePassword",
+      "input_type": "password"
+    },
+    {
+      "key": "db.name",
+      "display": "DB Name",
+      "default_value": "todo_db",
+      "input_type": "text"
+    }
+  ]
+}
