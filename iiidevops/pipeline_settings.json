@@ -1,5 +1,5 @@
 {
-  "name": "Laravel Postgres13 - login",
+  "name": "PHP Laravel with PostgreSQL - Login",
   "description": "Laravel 7 / Postgres: 13 / <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/laravel-postgres-login/blob/master/README.md' target='_blank'>登入(login)範本說明</a>",
   "arguments": [
     {
