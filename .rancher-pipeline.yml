@@ -119,7 +119,7 @@ stages:
     branch:
       include:
       - master
-- name: Deploy--Web
+- name: Deploy--Web including DB config
   steps:
   - applyAppConfig:
       answers:
