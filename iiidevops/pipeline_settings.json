@@ -1,6 +1,6 @@
 {
   "name": "PHP Laravel with PostgreSQL - Login",
-  "description": "Laravel 7 / Postgres: 13 / <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/laravel-postgres-login/blob/master/README.md' target='_blank'>登入(login)範本說明</a><hr size=1 /><b>v1.8.0</b><li>支援 SideeX 多測試檔功能<li>彙整 III DevOps Pipeline 相關 Stage 在 UI 統一開關功能",
+  "description": "Laravel 7 / Postgres: 13 / <a class='el-link el-link--primary' href='https://github.com/iiidevops-templates/laravel-postgres-login/blob/master/README.md' target='_blank'>登入(login)範本說明</a><hr size=1 /><b>v1.9.0</b><li>支援 SideeX 設定變數檔案功能<br /><b>v1.8.0</b><li>支援 SideeX 多測試檔功能<li>彙整 III DevOps Pipeline 相關 Stage 在 UI 統一開關功能",
   "arguments": [
     {
       "key": "db.username",
