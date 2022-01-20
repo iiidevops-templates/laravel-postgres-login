@@ -32,7 +32,7 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-scan-sonarqube
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-sq
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.2.1
+      version: 0.2.3
   when:
     branch:
       include:
@@ -53,7 +53,7 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-scan-checkmarx
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-cmx
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.2.0
+      version: 0.2.1
   when:
     branch:
       include:
@@ -74,10 +74,11 @@ stages:
         git.commitID: ${CICD_GIT_COMMIT}
         git.repoName: ${CICD_GIT_REPO_NAME}
         git.url: ${CICD_GIT_URL}
+		harbor.host: harbor-dev3.iiidevops.org
       catalogTemplate: cattle-global-data:iii-dev-charts3-db
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-db
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.3.1
+      version: 0.3.3
   when:
     branch:
       include:
@@ -165,6 +166,7 @@ stages:
         git.repoName: ${CICD_GIT_REPO_NAME}
         git.url: ${CICD_GIT_URL}
         harbor.host: harbor-dev3.iiidevops.org
+        imagePullSecrets[0].name: harbor-local
         pipeline.sequence: ${CICD_EXECUTION_SEQUENCE}
         web.imageTag: ${CICD_GIT_REPO_NAME}/${CICD_GIT_BRANCH}:${CICD_GIT_COMMIT}
         web.port: 3000
@@ -172,7 +174,7 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-web
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-serv
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.5.3
+      version: 0.5.9
   when:
     branch:
       include:
@@ -217,7 +219,7 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-test-zap
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-zap
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.2.0
+      version: 0.2.1
   when:
     branch:
       include:
@@ -238,7 +240,7 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-test-webinspect
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-wi
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.2.0
+      version: 0.2.1
   when:
     branch:
       include:
@@ -260,7 +262,7 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-test-postman
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-pm
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.3.0
+      version: 0.3.1
   when:
     branch:
       include:
@@ -282,7 +284,7 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-test-sideex
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-sdx
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.3.0
+      version: 0.3.1
   when:
     branch:
       include:
