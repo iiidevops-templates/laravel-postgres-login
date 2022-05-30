@@ -32,7 +32,6 @@ stages:
       include:
       - master
       - develop
-
 - name: Test--Checkmarx source code scan
   iiidevops: checkmarx
   steps:
@@ -52,7 +51,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Deploy--DB
   iiidevops: deployed-environments
   steps:
@@ -77,7 +75,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Deploy--Wait DB deployment
   iiidevops: deployed-environments
   steps:
@@ -100,7 +97,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Deploy--Set Web environment variables
   iiidevops: deployed-environments
   steps:
@@ -125,7 +121,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Build--Build and push docker image
   iiidevops: deployed-environments
   steps:
@@ -145,7 +140,21 @@ stages:
     branch:
       include:
       - skip-master
-
+- name: Build--Scan docker image
+  iiidevops: deployed-environments
+  steps:
+  - envFrom:
+    - sourceKey: api-origin
+      sourceName: nexus
+      targetKey: api_origin
+    runScriptConfig:
+      image: iiiorg/rancher-cli:v2.4.6
+      shellScript: curl --location -s --request POST ${api_origin}/v2/harbor/${CICD_GIT_REPO_NAME}/scan
+        --form branch=${CICD_GIT_BRANCH} --form commit_id=${CICD_GIT_COMMIT}
+  when:
+    branch:
+      include:
+      - skip-master
 - name: Deploy--Web including DB config
   iiidevops: deployed-environments
   steps:
@@ -169,12 +178,11 @@ stages:
       catalogTemplate: cattle-global-data:iii-dev-charts3-web
       name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-serv
       targetNamespace: ${CICD_GIT_REPO_NAME}
-      version: 0.5.10
+      version: 0.5.12
   when:
     branch:
       include:
       - skip-master
-
 - name: Deploy--Wait Web deployment
   iiidevops: deployed-environments
   steps:
@@ -197,7 +205,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Test--ZAP
   iiidevops: zap
   steps:
@@ -219,7 +226,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Test--WebInspect
   iiidevops: webinspect
   steps:
@@ -240,7 +246,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Test--Postman
   iiidevops: postman
   steps:
@@ -262,7 +267,6 @@ stages:
     branch:
       include:
       - skip-master
-
 - name: Test--SideeX
   iiidevops: sideex
   steps:
@@ -284,4 +288,3 @@ stages:
     branch:
       include:
       - skip-master
-
