@@ -49,7 +49,7 @@ stages:
   when:
     branch:
       include:
-      - master
+      - skip
 - name: Deploy--DB
   iiidevops: deployed-environments
   steps:
