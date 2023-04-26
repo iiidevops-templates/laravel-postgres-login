@@ -58,7 +58,7 @@ stages:
       answers:
         db.gui: true
         db.name: todo_db
-        db.password: templatePassword
+        db.password: DevOps_123
         db.tag: 13
         db.type: postgresql
         db.username: iiidevops
@@ -165,7 +165,7 @@ stages:
   - applyAppConfig:
       answers:
         db.name: todo_db
-        db.password: templatePassword
+        db.password: DevOps_123
         db.releaseName: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-db
         db.username: iiidevops
         git.branch: ${CICD_GIT_BRANCH}
